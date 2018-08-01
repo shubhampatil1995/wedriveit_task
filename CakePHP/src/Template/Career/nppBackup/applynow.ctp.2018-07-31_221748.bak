@@ -1,0 +1,12 @@
+<?= $this->Form->create($overelement) ?>
+<?= $this->Element('element for this view'); ?>
+<a h’ref="#" id=“btnDone” class=“button”>Cancel
+
+<?= $this->Form->button(__('Save'),['id'=>'bt_save']) ?> <?= $this->Form->end() ?>
+<script>
+$(document).ready(function () {
+$("#btnDone").click(function () {
+$("#dialogModal").dialog(‘close’);
+});
+});
+</script>

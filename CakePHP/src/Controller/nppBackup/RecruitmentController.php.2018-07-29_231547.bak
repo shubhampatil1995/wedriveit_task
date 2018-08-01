@@ -1,0 +1,57 @@
+<?php
+// src/Controller/ArticlesController.php
+
+namespace App\Controller;
+
+class RecruitmentController extends AppController
+{
+	public $helpers = array('Global');
+	
+	public function initialize()
+    {
+        parent::initialize();
+
+        $this->loadComponent('Flash'); // Include the FlashComponent
+    }
+	
+    public function index()
+    {
+        $this->set(compact('Recruitment/index'));
+    }
+	
+	public function add()
+    {
+		$recruitment = $this->Recruitment->newEntity();
+        if($this->request->is('post')) {
+           
+            $recruitment = $this->Recruitment->patchEntity($recruitment, $this->request->getData());
+            if($this->Recruitment->save($recruitment)) 
+			{
+                $this->Flash->success(__('Your article has been saved.'));
+                return $this->redirect(['action' => 'index']);
+            }
+			else{
+				if($recruitment->errors()){
+					$error_msg = '';
+					foreach( $recruitment->errors() as $errors){
+						if(is_array($errors)){
+							foreach($errors as $error){
+								$error_msg .= $error."<br/>";
+							}
+						}else{
+							$error_msg[] = $errors;
+						}
+					}
+
+					if($error_msg){
+						$this->Flash->error(
+							__("Please fix the following error(s):".$error_msg)
+						);
+					}
+				}
+			}
+        }
+		
+        $this->set(compact('Recruitment/add'));
+    }
+}

@@ -1,0 +1,31 @@
+<?php
+
+namespace App\Controller;
+
+class CareerController extends AppController
+{
+	public $helpers = array('Global');
+	
+	public function initialize()
+    {
+        parent::initialize();
+
+        $this->loadComponent('Flash'); // Include the FlashComponent
+    }
+	
+    public function index()
+    {
+		$this->loadModel('Recruitment'); 
+		$query = $this->Recruitment->find('all');
+		$result=iterator_to_array($query);
+		
+		if ($this->request->is('ajax')) {
+			$this->render('edit', 'ajax');
+		  }
+  
+		$this->layout= 'career_home';
+        $this->set('result',$result);
+    }
+	
+}
+?>

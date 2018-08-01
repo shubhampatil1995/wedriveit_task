@@ -1,0 +1,11 @@
+<?php
+   echo $this->Form->create("Registrations",array('url'=>'/register'));
+?>
+   <?php echo $this->Form->input('txt.', array('type' => 'text','label' => 'Job Position')); ?>
+   echo $this->Form->input('password');
+   echo $this->Form->input('password');
+   echo $this->Form->textarea('address');
+   echo $this->Form->file('profilepic');
+   echo $this->Form->button('Submit');
+   echo $this->Form->end();
+?>

@@ -1,0 +1,29 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-9">
+			<?php echo $this->Form->create("Recruitment",array('url'=>'/admin/addrecruitment')); ?>
+					<div class="col-md-6">
+						<?php echo $this->Form->input('txt.', array('type' => 'text','label' => 'Job Post','class' => 'form-control')); ?>
+					</div>
+					<div class="col-md-6">
+						<?php echo $this->Form->input('txt.', array('type' => 'text','label' => 'Required Experience','class' => 'form-control')); ?>
+					</div>
+					
+					<div class="col-md-6">
+						<?php echo $this->Form->input('txt.', array('type' => 'text','label' => 'Employment Type','class' => 'form-control')); ?>
+					</div>
+					<div class="col-md-6">
+						<?php echo $this->Form->input('txt.', array('type' => 'text','label' => 'CTC','class' => 'form-control')); ?>
+					</div>
+					<div class="col-md-6">
+						<?php echo $this->Form->input('txt.', array('type' => 'text','label' => 'Job Post','class' => 'form-control')); ?>
+					</div>
+					<div class="col-md-6">
+						<?php echo $this->Form->input('txt.', array('type' => 'text','label' => 'Required Experience')); ?>
+					</div>
+			<?php echo $this->Form->end();	?>
+			
+		</div>
+		<div class="col-md-3"></div>
+	</div>
+</div>

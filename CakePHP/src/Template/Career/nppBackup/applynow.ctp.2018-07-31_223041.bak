@@ -1,0 +1,28 @@
+<?= $this->Form->create($overelement) ?>
+<?= $this->Element('element for this view'); ?>
+<a href="#" id="btnDone" class="button">Cancel
+
+<?= $this->Form->button(__("Save"),["id"=>"bt_save"]) ?> <?= $this->Form->end() ?>
+<script>
+$(document).ready(function () {
+	$("#btnDone").click(function () {
+		$("#dialogModal").dialog("close");
+	});
+});
+</script>
+
+<script>
+$("#OverElemAdd").ajaxForm({
+	target: "#contentWrap",
+	resetForm: false,
+	beforeSubmit: function() {
+		$("#contentWrap").html("One moment…");
+	},
+	success: function(response) {
+		if (response=="saved")) {
+			$('#dialogModal').dialog('close'); //close containing dialog
+			location.reload(); //if you want to reload parent page to show updated user
+		}
+	}
+});
+</script>

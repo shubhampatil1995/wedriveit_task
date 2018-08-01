@@ -1,0 +1,37 @@
+<?php
+$cakeDescription = 'CakePHP: the rapid development php framework';
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <?= $this->Html->charset() ?>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <?= $cakeDescription ?>:
+        <?= $this->fetch('title') ?>
+    </title>
+    <?= $this->Html->meta('icon') ?>
+
+	<?= $this->Html->css('bootstrap/css/bootstrap.css') ?>
+	<?= $this->Html->script('bootstrap/js/bootstrap.min.js') ?>
+	<?= $this->Html->script('js/jquery.min.js') ?>
+    <?= $this->fetch('meta') ?>
+    <?= $this->fetch('css') ?>
+    <?= $this->fetch('script') ?>
+</head>
+<body>
+    <div class="container">
+  <h3>Inverted Navbar</h3>
+  <p>An inverted navbar is black instead of gray.</p>
+</div>
+
+</body>
+</html>
+
+    <div class="container clearfix">
+        <?= $this->fetch('content') ?>
+    </div>
+    <footer>
+    </footer>
+</body>
+</html>

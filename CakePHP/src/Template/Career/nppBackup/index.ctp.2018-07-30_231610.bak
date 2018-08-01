@@ -1,0 +1,43 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-9">
+			<table class="table table-bordered">
+				
+				<?php foreach ($result as $row): ?>
+					<div class="main_wrapper">
+						<div class="title">
+							<h4><?= $row->job_post; ?></h4>
+						</div>
+						<div class="row exp_ctc_row">
+							<div class="col-md-3">
+								<span class="req_title">Required Experience</span><br/><?= $row->req_exp; ?>
+							</div>
+							<div class="col-md-3">
+								<span class="req_title">Required Qualification</span><br/><?= $row->qualification; ?>
+							</div>
+							<div class="col-md-3">
+								<span class="req_title">CTC Per Annum</span><br/><?= $row->ctc_pa; ?>
+							</div>
+							<div class="col-md-3">
+								<span class="req_title">Employment Types</span><br/><?= $row->emp_type; ?>
+							</div>
+						</div>
+						<div class="job_desc">
+							<h4>Job Description</h4>
+							<p><?= $row->job_desc; ?></p>
+						</div>
+						<div class="job_skills">
+							<h4>Skills Required</h4>
+							<p><?= $row->skills_req; ?></p>
+						</div>
+						<div class="col-md-12"><?php echo $this->Html->link('Click me',array(
+									'controller' => 'users',
+									'action' => 'view' . $row->id), ['class' => 'button']); ?>
+						</div>
+					</div>
+				<?php endforeach; ?>
+			</table>
+		</div>
+		<div class="col-md-3"></div>
+	</div>
+</div>

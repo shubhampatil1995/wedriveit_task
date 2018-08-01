@@ -1,0 +1,9 @@
+echo $this->Form->create();
+
+echo $this->Form->input('username');   //text
+echo $this->Form->input('password');   //password
+echo $this->Form->input('approved');   //day, month, year, hour, minute,
+                                       //meridian
+echo $this->Form->input('quote');      //textarea
+
+echo $this->Form->end('Add');

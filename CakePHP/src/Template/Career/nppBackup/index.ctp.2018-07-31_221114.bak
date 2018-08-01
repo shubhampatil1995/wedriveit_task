@@ -1,0 +1,60 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-9">
+			<table class="table table-bordered">
+				
+				<?php $i=0; foreach ($result as $row): 
+					$i++;
+				?>
+				<div class="main_wrapper" >
+					<div class="inside_content" id="post_<?php echo $i;?>">
+						<div class="title">
+							<h3><?= $row->job_post; ?></h3>
+						</div>
+						<div class="row exp_ctc_row">
+							<div class="col-md-3">
+								<span class="req_title">Required Experience</span><br/><?= $row->req_exp; ?> Years
+							</div>
+							<div class="col-md-3">
+								<span class="req_title">Required Qualification</span><br/><?= $row->qualification; ?>
+							</div>
+							<div class="col-md-3">
+								<span class="req_title">CTC Per Annum</span><br/>RS. <?= $row->ctc_pa; ?>
+							</div>
+							<div class="col-md-3">
+								<span class="req_title">Employment Types</span><br/><?= $row->emp_type; ?>
+							</div>
+						</div>
+						<div class="job_desc">
+							<h4>Job Description</h4>
+							<p><?= $row->job_desc; ?></p>
+						</div>
+						<div class="job_skills">
+							<h4>Skills Required</h4>
+							<p><?= $row->skills_req; ?></p>
+						</div>
+						<div class="button_div">
+								<?php echo $this->Html->link('Apply Now',array(
+									'controller' => 'users',
+									'action' => 'view' . $row->id), ['class' => 'btn btn-primary']); 
+								?>
+								
+								<?= $this->Html->link('Apply Now', ['controller'=>'career', 'action' => 'edit', $overElements->id], ['class'=>'overlay']) ?> 
+						</div>
+					</div>
+					<div class="readmore">
+						<a onclick="display_full('post_<?php echo $i;?>')"><h5>Read More</h5></a>
+					</div>
+				</div>
+				<?php endforeach; ?>
+			</table>
+		</div>
+		<div class="col-md-3"></div>
+	</div>
+</div>
+<script>
+	function display_full(id)
+	{
+		$('#'+id).css({"height":"auto","transition":"opacity 0.4s ease-in-out","-webkit-transition": "opacity 0.4s ease-in-out"});
+	}
+</script>

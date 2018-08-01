@@ -1,0 +1,8 @@
+<?php echo $this->Form->create("Registrations",array('url'=>'/register')); ?>
+	<?php echo $this->Form->input('txt.', array('type' => 'text','label' => 'Job Position')); ?>
+	<?php echo $this->Form->input('txt.', array('type' => 'text','label' => 'Job Position')); ?>
+	<?php echo $this->Form->input('txt.', array('type' => 'text','label' => 'Job Position')); ?>
+	<?php echo $this->Form->input('txt.', array('type' => 'text','label' => 'Job Position')); ?>
+	<?php echo $this->Form->input('txt.', array('type' => 'text','label' => 'Job Position')); ?>
+	<?php echo $this->Form->input('txt.', array('type' => 'text','label' => 'Job Position')); ?>
+<?php echo $this->Form->end();	?>

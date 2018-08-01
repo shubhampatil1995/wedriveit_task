@@ -1,0 +1,36 @@
+label
+{
+	padding:5px;
+}
+
+.main_wrapper
+{
+	width:100%;
+	border:1px solid #CCCCCC;
+	box-shadow:0px 0px 20px #CCCCCC;
+	padding:10px;
+	margin:10px;
+}
+
+.button_div
+{
+	text-align:right;
+}
+
+.title
+{
+	font-weight:bold;
+	border-bottom:1px solid #CCCCCC;
+	padding:5px 0px;
+}
+
+.exp_ctc_row
+{
+	padding-top:5px;
+}
+
+.req_title
+{
+	font-weight:bold;
+	text-align:center;
+}

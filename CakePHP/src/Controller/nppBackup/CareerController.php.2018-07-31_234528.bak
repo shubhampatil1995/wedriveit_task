@@ -1,0 +1,55 @@
+<?php
+
+namespace App\Controller;
+
+class CareerController extends AppController
+{
+	public $helpers = array('Global');
+	
+	public function initialize()
+    {
+        parent::initialize();
+
+        $this->loadComponent('Flash'); // Include the FlashComponent
+    }
+	
+    public function index()
+    {
+		$this->loadModel('Recruitment'); 
+		$query = $this->Recruitment->find('all');
+		$result=iterator_to_array($query);
+  
+		$this->layout= 'career_home';
+        $this->set('result',$result);
+    }
+	
+	public function applynow($id='')
+	{
+		$this->loadModel('Applicants'); 
+		if($this->request->is('post')) {
+			echo "<pre>";
+			print_r($this->request->getData());
+			exit;
+			
+			$fileName = $this->request->data['resume_name']['name'];
+            $uploadPath = 'uploads/';
+            $uploadFile = $uploadPath.$fileName;
+            if(move_uploaded_file($this->request->data['file']['tmp_name'],$uploadFile)){
+				$uploadData = $this->Applicants->newEntity();
+				//$uploadData->name = $fileName;
+				//$uploadData->path = $uploadPath;
+				$uploadData->created = date("Y-m-d H:i:s");
+				$uploadData->modified = date("Y-m-d H:i:s");
+				if ($this->Files->save($uploadData)) {
+					$this->Flash->success(__('File has been uploaded and inserted successfully.'));
+				}else{
+					$this->Flash->error(__('Unable to upload file, please try again.'));
+				}
+			
+			}
+		
+		$this->layout= 'career_home';
+	}
+	
+}
+?>

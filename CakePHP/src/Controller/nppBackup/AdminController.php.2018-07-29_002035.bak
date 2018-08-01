@@ -1,0 +1,17 @@
+<?php
+// src/Controller/ArticlesController.php
+
+namespace App\Controller;
+
+class AdminController extends AppController
+{
+    public function index()
+    {
+        $this->set(compact('admin/index'));
+    }
+	
+	public function add-recruitment()
+    {
+        $this->set(compact('admin/add-recruitment'));
+    }
+}

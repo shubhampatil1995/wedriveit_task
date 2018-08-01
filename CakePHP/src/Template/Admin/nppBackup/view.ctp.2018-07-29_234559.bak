@@ -1,0 +1,28 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-9">
+			<table>
+				<tr>
+					<th>Job Post</th>
+					<th>Req. Experience</th>
+					<th>Employment Type</th>
+					<th>CTC</th>
+					<th>Job Description</th>
+					<th>Skills Req.</th>
+					<th>Qualification</th>
+				</tr>
+				<?php foreach ($articles as $article): ?>
+					<tr>
+						<td>
+							
+						</td>
+						<td>
+							<?= $article->created->format(DATE_RFC850) ?>
+						</td>
+					</tr>
+				<?php endforeach; ?>
+			</table>
+		</div>
+		<div class="col-md-3"></div>
+	</div>
+</div>

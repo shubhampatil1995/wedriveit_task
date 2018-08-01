@@ -1,0 +1,29 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<?php echo $this->Form->create("Registrations",array('url'=>'/register')); ?>
+					<div class="col-md-6">
+						<?php echo $this->Form->input('txt.', array('type' => 'text','label' => 'Job Post')); ?>
+					</div>
+					<div class="col-md-6">
+						<?php echo $this->Form->input('txt.', array('type' => 'text','label' => 'Required Experience')); ?>
+					</div>
+					
+					<div class="col-md-6">
+						<?php echo $this->Form->input('txt.', array('type' => 'text','label' => 'Job Post')); ?>
+					</div>
+					<div class="col-md-6">
+						<?php echo $this->Form->input('txt.', array('type' => 'text','label' => 'Required Experience')); ?>
+					</div>
+					<div class="col-md-6">
+						<?php echo $this->Form->input('txt.', array('type' => 'text','label' => 'Job Post')); ?>
+					</div>
+					<div class="col-md-6">
+						<?php echo $this->Form->input('txt.', array('type' => 'text','label' => 'Required Experience')); ?>
+					</div>
+			<?php echo $this->Form->end();	?>
+			
+		</div>
+		<div class="col-md-3"></div>
+	</div>
+</div>

@@ -1,0 +1,45 @@
+<?php
+$cakeDescription = 'CakePHP: the rapid development php framework';
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <?= $this->Html->charset() ?>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <?= $cakeDescription ?>:
+        <?= $this->fetch('title') ?>
+    </title>
+    <?= $this->Html->meta('icon') ?>
+
+	<?= $this->Html->css('bootstrap.css') ?>
+	<?= $this->Html->script('bootstrap.min.js') ?>
+	<?= $this->Html->script('jquery.min.js') ?>
+    <?= $this->fetch('meta') ?>
+    <?= $this->fetch('css') ?>
+    <?= $this->fetch('script') ?>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+			  <a class="navbar-brand" href="#">Recruitment</a>
+			</div>
+			<ul class="nav navbar-nav left">
+			  <li class="active"><a href="#">Home</a></li>
+			  <li><a href="#">Add Recruitment</a></li>
+			  <li><a href="#">List Recruitment</a></li>
+			  <li><a href="#">Applicants Candidate</a></li>
+			  <li><a href="#">Scheduled Interviews</a></li>
+			  <li><a href="#">Shortlisted Candidate</a></li>
+			</ul>
+		</div>
+	</nav>
+
+    <div class="container clearfix">
+        <?= $this->fetch('content') ?>
+    </div>
+    <footer>
+    </footer>
+</body>
+</html>

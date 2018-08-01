@@ -1,0 +1,12 @@
+<?php
+	App::uses('AppHelper', 'View/Helper');
+
+	class GlobalHelper extends AppHelper 
+	{
+		public function getEmployType() 
+		{
+			$emptypes=array('0'=>'-- Please Select--','1'=>'Internship','2'=>'Part Time','3'=>'Full Time');
+			return $emptypes;
+		}
+	}
+?>

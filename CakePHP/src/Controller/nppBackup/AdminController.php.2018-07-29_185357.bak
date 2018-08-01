@@ -1,0 +1,30 @@
+<?php
+// src/Controller/ArticlesController.php
+
+namespace App\Controller;
+
+class AdminController extends AppController
+{
+	public $helpers = array('Global');
+	
+    public function index()
+    {
+        $this->set(compact('admin/index'));
+    }
+	
+	public function add()
+    {
+		$article = $this->Recruitment->newEntity();
+        if ($this->request->is('post')) {
+            // Prior to 3.4.0 $this->request->data() was used.
+            $article = $this->Recruitment->patchEntity($article, $this->request->getData());
+            if ($this->Recruitment->save($article)) {
+                $this->Flash->success(__('Your article has been saved.'));
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('Unable to add your article.'));
+        }
+		
+        $this->set(compact('admin/add-recruitment'));
+    }
+}
